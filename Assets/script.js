@@ -20,6 +20,8 @@ function calenderHours () {
   }
 calenderHours();
 calenderTimes();
+
+// function to create All time of the day, text input boxes, and buttons to save input.
 function calenderTimes(){
 
     for (i=0; i <= calenderSlots.length; i++){
@@ -32,15 +34,29 @@ function calenderTimes(){
         //calender.appendChild(createSlotTime);
         //calender.appendChild(createSlotText);
         $('#row'+i).text(calenderSlots[i]);
-        $("<input>", { type: "text", id: "textInput",name: "textInput",size: "20"}).appendTo("#textBox"+i);
+        $('<input>', { type: 'text', id: 'textInput',name: 'textInput',size: '100'}).appendTo('#textBox'+i);
+        $('<input>',{type: 'button',id: 'submitButton', name: 'submitButton',value: 'SAVE EVENT'}).appendTo('#sButton'+i);
+        $('<button>').addClass('.saveBtn');
+        //$('#submitButton'+1).addClass('.saveBtn');
+        //$('#sButton'+i).click(calData);
       
     }
   }
 //console.log(slots);
 console.log(calenderSlots);
+
+
 //textbox
 //$("<input>", { type: "text", id: "text" + i ,size: "20"}).appendTo("#textbox"+i);
 
 //$("<div/>", { id: "hour" + i, class: "hour" }).appendTo("#day");
 
 //$("#saveButton" + i).click(setData);
+
+
+
+
+function calData(){
+
+
+}
