@@ -34,11 +34,9 @@ function calenderTimes(){
         //calender.appendChild(createSlotTime);
         //calender.appendChild(createSlotText);
         $('#row'+i).text(calenderSlots[i]);
-        $('<input>', { type: 'text', id: 'textInput',name: 'textInput',size: '100'}).appendTo('#textBox'+i);
-        $('<input>',{type: 'button',id: 'submitButton', name: 'submitButton',value: 'SAVE EVENT'}).appendTo('#sButton'+i);
-        $('<button>').addClass('.saveBtn');
-        //$('#submitButton'+1).addClass('.saveBtn');
-        //$('#sButton'+i).click(calData);
+        $('<input>', { type: 'text', id: 'textInput'+i,name: 'textInput',size: '150'}).appendTo('#textBox'+i);
+        $('<input>',{type: 'button',id: 'submitButton'+i, name: 'submitButton',value: 'SAVE EVENT',class:'saveBtn'}).appendTo('#sButton'+i);
+        $('#sButton'+i).click(calData);
       
     }
   }
@@ -46,17 +44,10 @@ function calenderTimes(){
 console.log(calenderSlots);
 
 
-//textbox
-//$("<input>", { type: "text", id: "text" + i ,size: "20"}).appendTo("#textbox"+i);
 
-//$("<div/>", { id: "hour" + i, class: "hour" }).appendTo("#day");
-
-//$("#saveButton" + i).click(setData);
-
-
-
-
+//function to save data to storage
 function calData(){
-
+localStorage.setItem('testvalue', 'kjsdfsk');
+localStorage.removeItem('testvalue');
 
 }
