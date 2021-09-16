@@ -34,9 +34,11 @@ function calenderTimes(){
         //calender.appendChild(createSlotTime);
         //calender.appendChild(createSlotText);
         $('#row'+i).text(calenderSlots[i]);
-        $('<input>', { type: 'text', id: 'textInput'+i,name: 'textInputs',size: '150'}).appendTo('#textBox'+i);
+        $('<input>', { type: 'text', id: 'textInput'+i,name: 'textInputs',size: '150', placeholder: 'Enter your calender item text here.....'}).appendTo('#textBox'+i);
         $('<input>',{type: 'button',id: 'submitButton'+i, name: 'submitButton',value: 'SAVE EVENT',class:'saveBtn'}).appendTo('#sButton'+i);
         $('#sButton'+i).click(calData);
+        $('#textInput'+i).val(localStorage.getItem('textInput'+ i ));
+
 
     }
 
@@ -45,11 +47,11 @@ function calenderTimes(){
 function calData(EVENT){
   // this next line uses regular exprestions that will return a number value only. 
      var index = EVENT.target.id.replace(/\D/g, '');
-     var calText = $('#textInput'+ index).val();
+     var calText = $('#textInput'+ index).val(); 
+
   console.log(calText);
-    
-  
-  
+  console.log(index);
+  localStorage.setItem('textInput'+index, calText);
   }
 
 
