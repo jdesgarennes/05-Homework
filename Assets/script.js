@@ -3,7 +3,7 @@
 var dayClock = document.getElementById('.container');
 var today = moment();
 $("#currentDay").text(today.format("MMMM Do YYYY, h:mm a"));
-
+var currentTime = moment().format("HH");
 var calenderSlots = null;
 
 
@@ -34,12 +34,22 @@ function calenderTimes(){
         //calender.appendChild(createSlotTime);
         //calender.appendChild(createSlotText);
         $('#row'+i).text(calenderSlots[i]);
+        if (currentTime > i)  
+          $('#row'+i).addClass('past');
+        else if (currentTime < i)
+          $('#row'+i).addClass('future');
+        else 
+          $('#row'+i).addClass('present');
+          
+        
+        
+          
         $('<input>', { type: 'text', id: 'textInput'+i,name: 'textInputs',size: '150', placeholder: 'Enter your calender item text here.....'}).appendTo('#textBox'+i);
         $('<input>',{type: 'button',id: 'submitButton'+i, name: 'submitButton',value: 'SAVE EVENT',class:'saveBtn'}).appendTo('#sButton'+i);
         $('#sButton'+i).click(calData);
         $('#textInput'+i).val(localStorage.getItem('textInput'+ i ));
-
-
+        
+        
     }
 
 //function to save data to storage
