@@ -43,6 +43,7 @@ function calenderTimes(){
 //function to save data to storage
 // regular expressions 
 function calData(EVENT){
+  // this next line uses regular exprestions that will return a number value only. 
      var index = EVENT.target.id.replace(/\D/g, '');
      var calText = $('#textInput'+ index).val();
   console.log(calText);
