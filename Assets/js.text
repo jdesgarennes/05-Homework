@@ -1,4 +1,0 @@
-//textbox
-//$("<input>", { type: "text", id: "text" + i ,size: "20"}).appendTo("#textbox"+i);
-//$("<div/>", { id: "hour" + i, class: "hour" }).appendTo("#day");
-//$("#saveButton" + i).click(setData);
